@@ -1,0 +1,609 @@
+@import "./animations";
+
+// VARIABLES XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+$primaryBorder: 2px solid rgb(180, 142, 70);
+$boxShadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+$buttonHoverColor: radial-gradient(rgb(24, 141, 33), rgb(0, 0, 0));
+
+// THE GAME XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-image: url("/images/background\ 3.jpg");
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Main container
+#main-container {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2)
+  );
+  width: 80%;
+  height: 80%;
+
+  border-radius: 1rem;
+  box-shadow: $boxShadow;
+}
+
+// div I use for creating a Vue instance
+#game-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 60% 15% 25%;
+}
+
+// Container for the title of the game and the intro text *******************
+
+.game-intro-container {
+  grid-column: 2/3;
+  grid-row: 1/2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    opacity: 0%;
+    //color: rgb(97, 26, 30);
+    font-family: "Spicy Rice";
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    padding: 0.5rem;
+    margin-top: 0;
+    background: -webkit-linear-gradient(rgb(187, 8, 8), rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: animateText 1.5s linear 3s 1 forwards;
+  }
+
+  p {
+    opacity: 0%;
+    margin: 1.2rem 0;
+    font-size: 1.6rem;
+    font-family: "Berkshire Swash";
+    background: -webkit-linear-gradient(rgb(187, 8, 8), rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #first {
+    animation: animateText 1.5s linear 4.5s 1 forwards;
+  }
+  #second {
+    animation: animateText 1.5s linear 6s 1 forwards;
+  }
+  #third {
+    animation: animateText 1.5s linear 7.5s 1 forwards;
+  }
+  #last {
+    animation: animateText 1.5s linear 10s 1 forwards;
+  }
+}
+
+// divs for holding player image, name, healtbars
+
+.players {
+  transition: opacity 0.5s;
+  opacity: 0%; // Kad se element stvori je 0, zatim se attacha klasa .completeOpacity koja stavi na 100%;
+  display: grid;
+  grid-template-rows: 60% 10% 15% 1fr;
+  position: relative;
+
+  .img-container {
+    transition: all 0.5s;
+    background-color: black;
+    box-shadow: $boxShadow;
+    border: $primaryBorder;
+    border-radius: 50%;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 0.7rem;
+    justify-self: center;
+    position: relative;
+  }
+
+  .img-container--hero {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .img-container--dragon {
+    background-size: cover;
+    background-position: center;
+  }
+
+  //ova klasa se attacha samo kad zmaj umre jer je slika glupa i moram je malo smanjiti za razliku od glavne slike
+
+  .dragonDeath {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+  }
+
+  // Klasa .active se attacha samo kad je aktivni attacker hero ili dragon
+  .active {
+    animation: animateActive 2s linear infinite alternate-reverse;
+  }
+
+  // This class gets attached when there damage is done.
+
+  .impact {
+    animation: animateImpact 1.5s linear 1 alternate-reverse;
+  }
+
+  h2 {
+    color: white;
+    margin: 0;
+    justify-self: center;
+    font-family: "Berkshire Swash";
+    letter-spacing: 3px;
+    font-weight: 200;
+  }
+
+  // Styling healthbars for hero and dragon **************************************************
+  .healthbar-wrapper {
+    //background: rgb(197, 25, 25);
+    background: radial-gradient(rgb(187, 8, 8), rgba(0, 0, 0, 0.7));
+
+    width: 90%;
+    height: 50%;
+    border: $primaryBorder;
+    border-radius: 0.9rem;
+    box-shadow: $boxShadow;
+    justify-self: center;
+    margin-top: 0.5rem;
+    position: relative;
+
+    p {
+      position: absolute;
+      margin: 0;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      bottom: 7%;
+      left: 42%;
+      z-index: 2;
+    }
+  }
+
+  .healthbar-progress {
+    transition: all 0.3s;
+    background: $buttonHoverColor;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 0.9rem;
+  }
+
+  // Styling defense bars for hero and dragon
+
+  .defensebar-wrapper {
+    background-color: transparent;
+    width: 91%;
+    height: 50%;
+    //border: 1px solid black;
+    border-radius: 0.5rem;
+    justify-self: center;
+    margin-top: 0.5rem;
+    position: relative;
+    top: -50%;
+  }
+
+  .defensebar-progress {
+    transition: all 0.3s;
+    background-image: url("/images/defensebar\ 2.png");
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    position: absolute;
+  }
+
+  // 3 status divs for the hero.
+  .hero-status {
+    width: 25%;
+    height: 200px;
+    margin-top: 0.7rem;
+    position: absolute;
+    left: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+      transition: all 0.5s;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-left: 0.3rem;
+      opacity: 0;
+    }
+
+    div:first-of-type {
+      background-image: url("/images/luck\ up\ 4.png");
+    }
+
+    div:nth-of-type(2) {
+      margin-left: 1.8rem;
+      background-image: url("/images/buff up 11.png"),
+        url("/images/vortex 9.png");
+
+      filter: brightness(130%) saturate(150%);
+    }
+
+    div:last-of-type {
+      background-image: url("/images/defense up 8.png");
+    }
+
+    // Ova klasa je i u hero statusu i u dragon statusu
+    .displayBuff {
+      opacity: 100%;
+      animation: animateBuff 1s linear infinite forwards;
+    }
+
+    // Ova klasa je za displayati defense status i za hero i za dragon.
+
+    .displayShield {
+      opacity: 100%;
+      animation: animateShield 1s linear infinite forwards;
+    }
+
+    // Ova klasa je za displayati defense status i za hero i za dragon.
+
+    .displayLuck {
+      opacity: 100%;
+      animation: animateLuck 1s linear infinite alternate-reverse;
+    }
+  }
+
+  // 3 status divs for the dragon.
+  .dragon-status {
+    width: 25%;
+    height: 200px;
+    margin-top: 0.7rem;
+    position: absolute;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    div {
+      transition: all 0.5s;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 0.3rem;
+      opacity: 0;
+    }
+
+    div:first-of-type {
+      background-image: url("/images/luck\ up\ 4.png");
+    }
+
+    div:nth-of-type(2) {
+      margin-right: 1.8rem;
+      background-image: url("/images/buff\ up\ 3.png");
+    }
+
+    div:last-of-type {
+      background-image: url("/images/defense\ up\ 8.png");
+    }
+
+    // Ova klasa je za displayati buff status i za hero i za drago
+    .displayBuff {
+      opacity: 100%;
+      animation: animateBuff 1s linear infinite forwards;
+    }
+
+    // Ova klasa je za displayati defense status i za hero i za dragon.
+
+    .displayShield {
+      opacity: 100%;
+      animation: animateShield 1s linear infinite forwards;
+    }
+
+    // Ova klasa je za displayati defense status i za hero i za dragon.
+
+    .displayLuck {
+      opacity: 100%;
+      animation: animateLuck 1s linear infinite alternate-reverse;
+    }
+  }
+}
+
+// UL that will display battle log messages
+
+.battlelog {
+  // prijelaz za ul se ljepše vidi kad ima neki background color, but oh well  (attaching .completeOpacity does work though like for any other bigger containers I attached it to.)
+  opacity: 0%;
+  transition: opacity 0.5s;
+  padding: 0.5rem;
+  margin: 0;
+  list-style-type: none;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+
+  li {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 42px;
+    border: $primaryBorder;
+    border-radius: 1rem;
+    box-shadow: $boxShadow;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family: "Verdana";
+
+    animation: animateEntry 0.5s linear 1 alternate;
+  }
+}
+
+#battlelog::-webkit-scrollbar {
+  display: none;
+}
+
+// DICE ROLL CONTAINER XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.turn-container {
+  transition: opacity 0.5s;
+  opacity: 0%;
+  width: 300px;
+  height: 90px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #dice-container {
+    background-color: rgb(0, 0, 0);
+    border: $primaryBorder;
+    box-shadow: $boxShadow;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animateDiceContainer 1s linear infinite alternate-reverse;
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
+
+    // klasa koja se dodaje na img u dice containeru kad se dogodi klik na roll dice button
+    .roll {
+      animation: animateDice 1s ease-out 1 alternate;
+    }
+  }
+
+  // Roll Dice and End Turn Buttons General Styling**************************
+
+  button {
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    border: $primaryBorder;
+    border-radius: 50%;
+    box-shadow: $boxShadow;
+    margin: 0 1rem;
+    outline: none;
+    position: relative; // Need this for positioning the pseudo element tooltip absolutely
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: $buttonHoverColor;
+  }
+
+  button:active {
+    box-shadow: inset $boxShadow;
+    img {
+      transform: scale(0.9);
+    }
+  }
+
+  // Roll Dice Button ImageStyling *********************
+
+  #end-turn-logo {
+    transition: all 1s;
+  }
+
+  //.disabled klasa se attacha na roll dice btn nakon što se pritisne, a miče se s njega kad se pritinse end turn btn.
+
+  .disabled {
+    // OVA KLASA JE ISTA KO I .SKILL-BUTTONS KLASA - REFAKTORIRATI.
+    pointer-events: none; // this changes to auto when button is enabled
+    filter: brightness(70%) contrast(80%) grayscale(30%);
+    background-color: rgb(39, 38, 38); // this changes to black when enabled
+  }
+}
+
+// GAME CONTROLS - SKILL BUTTONS, START BUTTON, FORFEIT BUTTON XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+#game-controls {
+  grid-column: 1 / -1;
+  grid-row: 3 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  //Skill buttons and the Forfeit button
+  button {
+    transition: all 0.5s;
+    background-color: black;
+    position: relative; // need this for the Pseudo Elements Positioning
+    width: 90px;
+    height: 90px;
+    margin: 0.2rem 0.5rem;
+    border: $primaryBorder;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: $boxShadow;
+
+    img {
+      width: 75%;
+      height: 75%;
+    }
+  }
+
+  //Samo buttons sa skill-buttons klasom su disabled
+
+  .skill-buttons {
+    pointer-events: none; // this changes to auto when button is enabled
+    filter: brightness(70%) contrast(80%) grayscale(30%);
+    background-color: rgb(39, 38, 38); // this changes to black when enabled
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-image: $buttonHoverColor;
+  }
+
+  //This class will be added to buttons which ARE clickable in relation to the dice result. If the result is 3, buttons with id-s 3,2,1 will become clickable! the rest will remain unclickable!
+
+  .enabled {
+    background-color: black;
+    pointer-events: auto;
+    filter: brightness(100%);
+  }
+
+  // Selecting only skill buttons (they have a tooltip) - makes an img little bit smaller and gives me inner shadow
+
+  button[data-tooltip]:active {
+    box-shadow: inset $boxShadow;
+    img {
+      transform: scale(0.9);
+    }
+  }
+
+  // Klasa koja se attacha na svaki skill button IMAGE  kad se stisne End Turn button
+
+  .switchSkill {
+    animation: animateSkillBtn 1s linear 1 forwards;
+  }
+
+  // Start game button ***************************************
+  #start-game-btn {
+    pointer-events: auto; // had to put it here because skill buttons have it on "none" by default and they are all in the same
+    cursor: pointer; // had to put it becaue it's in the same continer as skill buttons
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 120px;
+    height: 120px;
+
+    // Ova animacija samo miče start btn gore dolje lagano
+    animation: animateStartBtn 1.5s linear infinite alternate-reverse;
+  }
+
+  #start-game-logo {
+    // when the start button is pressed - the delay is 0.5 second so this transformation can play out when the class .rotate is attached.
+    transition: all 0.5s;
+    // This should come in handy when the button is created.
+    width: 100%;
+    height: 100%;
+
+    animation: animateStartLogo 0.5s ease-in 1 normal;
+  }
+
+  // This class gets attached to the image when start btn is pressed (btn is removed from the dom after that)
+  .rotation {
+    transform: rotateZ(180deg) scale(0);
+  }
+}
+
+// Svi veći containeri elemenata su ovako stavljen na 0% opacity kad se kreiraju - kad im se prikači .completeOpacity, dobijem lijep transition
+.battle-controls__container {
+  transition: opacity 0.5s;
+  opacity: 0%;
+}
+
+// This class is for achieving smooth transition for gameplay elements when starting and forefiting the game
+// their opacity should be 0% when they are created and then should transition into 100% opacity during 0.5s;
+
+.completeOpacity {
+  opacity: 100%;
+}
+
+// Selecting all buttons which have a data-tooltip attribute and inserting the value into content of ::before pseudo element for a nice tooltip! :)
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  bottom: -50%;
+  left: -15%;
+  width: 7rem;
+  height: 1.5rem;
+  color: rgb(180, 142, 70);
+  background-color: black;
+  border: $primaryBorder;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-radius: 0.9rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  opacity: 0%;
+}
+
+[data-tooltip]:hover::before {
+  /* Show the tooltip on hover and focus */
+  display: block;
+  // I neku malu animaciju  koja će dovest opacity na 100%;
+  animation: animateText 0.2s linear 1 normal forwards;
+  // animation-fill-mode forwards - will keep opacity at 100% during hover!
+}
+
+// Selecting only roll dice btn i end turn btn radi tooltipsa (većina stila preuzeta od ostalih  buttonsa koji imaju data-tooltip)
+
+#roll-dice-btn::before,
+#end-turn-btn::before {
+  content: attr(data-tooltip);
+  left: -55%;
+  bottom: -75%;
+}
+
+#roll-dice-btn:hover::before,
+#end-turn-btn:hover::before {
+  display: block;
+}

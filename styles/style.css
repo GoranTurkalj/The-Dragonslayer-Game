@@ -1,0 +1,1009 @@
+@-webkit-keyframes animateStartBtn {
+  0% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+}
+
+@keyframes animateStartBtn {
+  0% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+}
+
+@-webkit-keyframes animateStartLogo {
+  0% {
+    -webkit-transform: rotateZ(0deg) scale(0);
+            transform: rotateZ(0deg) scale(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(-180deg) scale(1);
+            transform: rotateZ(-180deg) scale(1);
+  }
+}
+
+@keyframes animateStartLogo {
+  0% {
+    -webkit-transform: rotateZ(0deg) scale(0);
+            transform: rotateZ(0deg) scale(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(-180deg) scale(1);
+            transform: rotateZ(-180deg) scale(1);
+  }
+}
+
+@-webkit-keyframes animateActive {
+  0% {
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 10px 5px #188d21;
+            box-shadow: 0px 0px 10px 5px #188d21;
+  }
+  100% {
+  }
+}
+
+@keyframes animateActive {
+  0% {
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 10px 5px #188d21;
+            box-shadow: 0px 0px 10px 5px #188d21;
+  }
+  100% {
+  }
+}
+
+@-webkit-keyframes animateDice {
+  0% {
+    -webkit-transform: rotate3d(1, 1, 1, 0deg);
+            transform: rotate3d(1, 1, 1, 0deg);
+    opacity: 0%;
+  }
+  25% {
+    -webkit-transform: rotate3d(1, 1, 1, 90deg);
+            transform: rotate3d(1, 1, 1, 90deg);
+    opacity: 0%;
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 1, 1, 180deg);
+            transform: rotate3d(1, 1, 1, 180deg);
+    opacity: 0%;
+  }
+  75% {
+    -webkit-transform: rotate3d(1, 1, 1, 270deg);
+            transform: rotate3d(1, 1, 1, 270deg);
+    opacity: 0%;
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+            transform: rotate3d(1, 1, 1, 360deg);
+    opacity: 100%;
+  }
+}
+
+@keyframes animateDice {
+  0% {
+    -webkit-transform: rotate3d(1, 1, 1, 0deg);
+            transform: rotate3d(1, 1, 1, 0deg);
+    opacity: 0%;
+  }
+  25% {
+    -webkit-transform: rotate3d(1, 1, 1, 90deg);
+            transform: rotate3d(1, 1, 1, 90deg);
+    opacity: 0%;
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 1, 1, 180deg);
+            transform: rotate3d(1, 1, 1, 180deg);
+    opacity: 0%;
+  }
+  75% {
+    -webkit-transform: rotate3d(1, 1, 1, 270deg);
+            transform: rotate3d(1, 1, 1, 270deg);
+    opacity: 0%;
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+            transform: rotate3d(1, 1, 1, 360deg);
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes animateEntry {
+  0% {
+    max-height: 0px;
+    -webkit-transform: scale(0) rotateX(-90deg);
+            transform: scale(0) rotateX(-90deg);
+    opacity: 0%;
+  }
+  100% {
+    max-height: 42px;
+    -webkit-transform: scale(1) rotateX(0deg);
+            transform: scale(1) rotateX(0deg);
+    opacity: 100%;
+  }
+}
+
+@keyframes animateEntry {
+  0% {
+    max-height: 0px;
+    -webkit-transform: scale(0) rotateX(-90deg);
+            transform: scale(0) rotateX(-90deg);
+    opacity: 0%;
+  }
+  100% {
+    max-height: 42px;
+    -webkit-transform: scale(1) rotateX(0deg);
+            transform: scale(1) rotateX(0deg);
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes animateBuff {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes animateBuff {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes animateShield {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes animateShield {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes animateLuck {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes animateLuck {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animateDiceContainer {
+  0% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}
+
+@keyframes animateDiceContainer {
+  0% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}
+
+@-webkit-keyframes animateImpact {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  10% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  20% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  30% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  40% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  50% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  60% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  70% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  80% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  90% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes animateImpact {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  10% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  20% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  30% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  40% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  50% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  60% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  70% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  80% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  90% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes animateSkillBtn {
+  0% {
+  }
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes animateSkillBtn {
+  0% {
+  }
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes animateText {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes animateText {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-image: url("/images/background 3.jpg");
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-container {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.2)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  width: 80%;
+  height: 80%;
+  border-radius: 1rem;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 40% 30%;
+      grid-template-columns: 30% 40% 30%;
+  -ms-grid-rows: 60% 15% 25%;
+      grid-template-rows: 60% 15% 25%;
+}
+
+.game-intro-container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-intro-container h1 {
+  opacity: 0%;
+  font-family: "Spicy Rice";
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  margin-top: 0;
+  background: -webkit-linear-gradient(#bb0808, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: animateText 1.5s linear 3s 1 forwards;
+          animation: animateText 1.5s linear 3s 1 forwards;
+}
+
+.game-intro-container p {
+  opacity: 0%;
+  margin: 1.2rem 0;
+  font-size: 1.6rem;
+  font-family: "Berkshire Swash";
+  background: -webkit-linear-gradient(#bb0808, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-intro-container #first {
+  -webkit-animation: animateText 1.5s linear 4.5s 1 forwards;
+          animation: animateText 1.5s linear 4.5s 1 forwards;
+}
+
+.game-intro-container #second {
+  -webkit-animation: animateText 1.5s linear 6s 1 forwards;
+          animation: animateText 1.5s linear 6s 1 forwards;
+}
+
+.game-intro-container #third {
+  -webkit-animation: animateText 1.5s linear 7.5s 1 forwards;
+          animation: animateText 1.5s linear 7.5s 1 forwards;
+}
+
+.game-intro-container #last {
+  -webkit-animation: animateText 1.5s linear 10s 1 forwards;
+          animation: animateText 1.5s linear 10s 1 forwards;
+}
+
+.players {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 60% 10% 15% 1fr;
+      grid-template-rows: 60% 10% 15% 1fr;
+  position: relative;
+}
+
+.players .img-container {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: black;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  border: 2px solid #b48e46;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 0.7rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+}
+
+.players .img-container--hero {
+  background-size: cover;
+  background-position: center;
+}
+
+.players .img-container--dragon {
+  background-size: cover;
+  background-position: center;
+}
+
+.players .dragonDeath {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.players .active {
+  animation: animateActive 2s linear infinite alternate-reverse;
+}
+
+.players .impact {
+  animation: animateImpact 1.5s linear 1 alternate-reverse;
+}
+
+.players h2 {
+  color: white;
+  margin: 0;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-family: "Berkshire Swash";
+  letter-spacing: 3px;
+  font-weight: 200;
+}
+
+.players .healthbar-wrapper {
+  background: radial-gradient(#bb0808, rgba(0, 0, 0, 0.7));
+  width: 90%;
+  height: 50%;
+  border: 2px solid #b48e46;
+  border-radius: 0.9rem;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.players .healthbar-wrapper p {
+  position: absolute;
+  margin: 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  bottom: 7%;
+  left: 42%;
+  z-index: 2;
+}
+
+.players .healthbar-progress {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: radial-gradient(#188d21, black);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9rem;
+}
+
+.players .defensebar-wrapper {
+  background-color: transparent;
+  width: 91%;
+  height: 50%;
+  border-radius: 0.5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 0.5rem;
+  position: relative;
+  top: -50%;
+}
+
+.players .defensebar-progress {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-image: url("/images/defensebar 2.png");
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  position: absolute;
+}
+
+.players .hero-status {
+  width: 25%;
+  height: 200px;
+  margin-top: 0.7rem;
+  position: absolute;
+  left: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.players .hero-status div {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 0.3rem;
+  opacity: 0;
+}
+
+.players .hero-status div:first-of-type {
+  background-image: url("/images/luck up 4.png");
+}
+
+.players .hero-status div:nth-of-type(2) {
+  margin-left: 1.8rem;
+  background-image: url("/images/buff up 11.png"), url("/images/vortex 9.png");
+  -webkit-filter: brightness(130%) saturate(150%);
+          filter: brightness(130%) saturate(150%);
+}
+
+.players .hero-status div:last-of-type {
+  background-image: url("/images/defense up 8.png");
+}
+
+.players .hero-status .displayBuff {
+  opacity: 100%;
+  -webkit-animation: animateBuff 1s linear infinite forwards;
+          animation: animateBuff 1s linear infinite forwards;
+}
+
+.players .hero-status .displayShield {
+  opacity: 100%;
+  -webkit-animation: animateShield 1s linear infinite forwards;
+          animation: animateShield 1s linear infinite forwards;
+}
+
+.players .hero-status .displayLuck {
+  opacity: 100%;
+  animation: animateLuck 1s linear infinite alternate-reverse;
+}
+
+.players .dragon-status {
+  width: 25%;
+  height: 200px;
+  margin-top: 0.7rem;
+  position: absolute;
+  left: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.players .dragon-status div {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  opacity: 0;
+}
+
+.players .dragon-status div:first-of-type {
+  background-image: url("/images/luck up 4.png");
+}
+
+.players .dragon-status div:nth-of-type(2) {
+  margin-right: 1.8rem;
+  background-image: url("/images/buff up 3.png");
+}
+
+.players .dragon-status div:last-of-type {
+  background-image: url("/images/defense up 8.png");
+}
+
+.players .dragon-status .displayBuff {
+  opacity: 100%;
+  -webkit-animation: animateBuff 1s linear infinite forwards;
+          animation: animateBuff 1s linear infinite forwards;
+}
+
+.players .dragon-status .displayShield {
+  opacity: 100%;
+  -webkit-animation: animateShield 1s linear infinite forwards;
+          animation: animateShield 1s linear infinite forwards;
+}
+
+.players .dragon-status .displayLuck {
+  opacity: 100%;
+  animation: animateLuck 1s linear infinite alternate-reverse;
+}
+
+.battlelog {
+  opacity: 0%;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  padding: 0.5rem;
+  margin: 0;
+  list-style-type: none;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+}
+
+.battlelog li {
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 42px;
+  border: 2px solid #b48e46;
+  border-radius: 1rem;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: "Verdana";
+  -webkit-animation: animateEntry 0.5s linear 1 alternate;
+          animation: animateEntry 0.5s linear 1 alternate;
+}
+
+#battlelog::-webkit-scrollbar {
+  display: none;
+}
+
+.turn-container {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0%;
+  width: 300px;
+  height: 90px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.turn-container #dice-container {
+  background-color: black;
+  border: 2px solid #b48e46;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  animation: animateDiceContainer 1s linear infinite alternate-reverse;
+}
+
+.turn-container #dice-container img {
+  width: 50%;
+  height: 50%;
+}
+
+.turn-container #dice-container .roll {
+  -webkit-animation: animateDice 1s ease-out 1 alternate;
+          animation: animateDice 1s ease-out 1 alternate;
+}
+
+.turn-container button {
+  background-color: black;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #b48e46;
+  border-radius: 50%;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  margin: 0 1rem;
+  outline: none;
+  position: relative;
+}
+
+.turn-container button img {
+  width: 100%;
+  height: 100%;
+}
+
+.turn-container button:hover {
+  cursor: pointer;
+  background: radial-gradient(#188d21, black);
+}
+
+.turn-container button:active {
+  -webkit-box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.turn-container button:active img {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.turn-container #end-turn-logo {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.turn-container .disabled {
+  pointer-events: none;
+  -webkit-filter: brightness(70%) contrast(80%) grayscale(30%);
+          filter: brightness(70%) contrast(80%) grayscale(30%);
+  background-color: #272626;
+}
+
+#game-controls {
+  grid-column: 1 / -1;
+  grid-row: 3 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#game-controls button {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: black;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0.2rem 0.5rem;
+  border: 2px solid #b48e46;
+  border-radius: 50%;
+  outline: none;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+#game-controls button img {
+  width: 75%;
+  height: 75%;
+}
+
+#game-controls .skill-buttons {
+  pointer-events: none;
+  -webkit-filter: brightness(70%) contrast(80%) grayscale(30%);
+          filter: brightness(70%) contrast(80%) grayscale(30%);
+  background-color: #272626;
+}
+
+#game-controls button:hover {
+  cursor: pointer;
+  background-image: radial-gradient(#188d21, black);
+}
+
+#game-controls .enabled {
+  background-color: black;
+  pointer-events: auto;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+}
+
+#game-controls button[data-tooltip]:active {
+  -webkit-box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+#game-controls button[data-tooltip]:active img {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#game-controls .switchSkill {
+  -webkit-animation: animateSkillBtn 1s linear 1 forwards;
+          animation: animateSkillBtn 1s linear 1 forwards;
+}
+
+#game-controls #start-game-btn {
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 120px;
+  height: 120px;
+  animation: animateStartBtn 1.5s linear infinite alternate-reverse;
+}
+
+#game-controls #start-game-logo {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: animateStartLogo 0.5s ease-in 1 normal;
+          animation: animateStartLogo 0.5s ease-in 1 normal;
+}
+
+#game-controls .rotation {
+  -webkit-transform: rotateZ(180deg) scale(0);
+          transform: rotateZ(180deg) scale(0);
+}
+
+.battle-controls__container {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0%;
+}
+
+.completeOpacity {
+  opacity: 100%;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  bottom: -50%;
+  left: -15%;
+  width: 7rem;
+  height: 1.5rem;
+  color: #b48e46;
+  background-color: black;
+  border: 2px solid #b48e46;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-radius: 0.9rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  opacity: 0%;
+}
+
+[data-tooltip]:hover::before {
+  /* Show the tooltip on hover and focus */
+  display: block;
+  -webkit-animation: animateText 0.2s linear 1 normal forwards;
+          animation: animateText 0.2s linear 1 normal forwards;
+}
+
+#roll-dice-btn::before,
+#end-turn-btn::before {
+  content: attr(data-tooltip);
+  left: -55%;
+  bottom: -75%;
+}
+
+#roll-dice-btn:hover::before,
+#end-turn-btn:hover::before {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

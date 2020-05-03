@@ -1,0 +1,11 @@
+{
+  "name": "dragonslayer_game",
+  "version": "1.0.0",
+  "description": "This is my first mini-project, a simple game where you throw a dice to kill a dragon. Made with a bit of Vue.js mixed vith vanilla JS.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Goran Turkalj",
+  "license": "ISC"
+}

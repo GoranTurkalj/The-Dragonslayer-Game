@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Dragon Slayer Game</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="icon" href="data:," />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="game-container">
+        <!----------------------------THE HERO SIDE ------------------------------>
+        <div
+          class="players players--hero"
+          v-if="gameIsRunning"
+          :class="{completeOpacity: showContainer}"
+        >
+          <div
+            class="img-container img-container--hero"
+            :class="{impact: hero.wasAttacked, active: attachActive}"
+            :style="heroImage"
+          ></div>
+          <div class="hero-status">
+            <div id="luck-hero" :class="displayHeroLuck"></div>
+            <div id="buff-hero" :class="displayHeroBuff"></div>
+            <div id="defense-hero" :class="displayHeroDefense"></div>
+          </div>
+          <h2>{{hero.name}}</h2>
+          <div class="healthbar-wrapper">
+            <p>{{hero.currentHP}}%</p>
+            <div
+              :style="{width: hero.currentHP + '%'}"
+              class="healthbar-progress"
+            ></div>
+          </div>
+          <div class="defensebar-wrapper">
+            <div
+              :style="{width: hero.defenseBar +'%'}"
+              class="defensebar-progress"
+            ></div>
+          </div>
+        </div>
+        <!-------------------------------------THE BATTLE LOG LIST-------------- -->
+        <template v-if="!gameIsRunning">
+          <div class="game-intro-container">
+            <h1 id="game-title">The Dragon Slayer Game</h1>
+            <p id="first">Dragonslaying is a matter of patience and luck.</p>
+            <p id="second">That's all it takes, really.</p>
+            <p id="third">Patience...and luck.</p>
+            <p id="last">That, and a big goddamn cannon!</p>
+          </div>
+        </template>
+        <ul
+          v-else
+          id="battlelog"
+          class="battlelog"
+          :class="{completeOpacity: showContainer}"
+        ></ul>
+        <!--------------------THE DICE CONTAINER & CONTROLS ------------------------------------------>
+        <template v-if="gameIsRunning">
+          <div class="turn-container" :class="{completeOpacity: showContainer}">
+            <button
+              id="roll-dice-btn"
+              @click="rollDice"
+              data-tooltip="Throw Dice"
+              :class="{disabled: diceThrown}"
+            >
+              <img src="/images/roll gauntlet 2.png" alt="roll" />
+            </button>
+            <div id="dice-container">
+              <img :src="diceImage" :class="{roll:attachRoll}" alt="" />
+            </div>
+            <button id="end-turn-btn" @click="endTurn" data-tooltip="End Turn">
+              <img
+                id="end-turn-logo"
+                src="/images/turn icon 4.png"
+                :style="rotateHourglass"
+                alt="turn"
+              />
+            </button>
+          </div>
+        </template>
+        <!----------------------------THE DRAGON SIDE --------------------------------->
+        <div
+          class="players players--dragon"
+          v-if="gameIsRunning"
+          :class="{completeOpacity: showContainer}"
+        >
+          <div
+            class="img-container img-container--dragon"
+            :class="{impact: dragon.wasAttacked, active: !attachActive, dragonDeath: dragon.dead}"
+            :style="dragonImage"
+          ></div>
+
+          <div class="dragon-status">
+            <div id="luck-dragon" :class="displayDragonLuck"></div>
+            <div id="buff-dragon" :class="displayDragonBuff"></div>
+            <div id="defense-dragon" :class="displayDragonDefense"></div>
+          </div>
+          <h2>{{dragon.name}}</h2>
+          <div class="healthbar-wrapper">
+            <p>{{dragon.currentHP}}%</p>
+            <div
+              :style="{width: dragon.currentHP + '%'}"
+              class="healthbar-progress"
+            ></div>
+          </div>
+          <div class="defensebar-wrapper">
+            <div
+              :style="{width: dragon.defenseBar +'%'}"
+              class="defensebar-progress"
+            ></div>
+          </div>
+        </div>
+        <!--------------------START GAME CONTROLS------------------------------------------------ -->
+        <div id="game-controls">
+          <button
+            id="start-game-btn"
+            v-if="!gameIsRunning"
+            @click="startBattle"
+          >
+            <img
+              id="start-game-logo"
+              src="/images/start 11.png"
+              :class="{rotation: attachRotation}"
+              alt="START"
+            />
+          </button>
+          <!---------------------BATTLE CONTROLS-------------------------------------------------- -->
+          <template v-if="gameIsRunning" class="battle-controls">
+            <div
+              class="battle-controls__container"
+              :class="{completeOpacity: showContainer}"
+            >
+              <!--------------------Light Attack ------------------------------------>
+              <button
+                id="1"
+                class="skill-buttons"
+                @click="activate"
+                @mouseenter="getTooltip"
+                :data-tooltip="tooltip"
+              >
+                <img
+                  :src="ctrlImages.lightAttack[player]"
+                  alt="LIGHT"
+                  :class="{switchSkill: attachSwitchSkill}"
+                />
+              </button>
+              <!--------------------------Heavy Attack--------------------------------------->
+              <button
+                id="2"
+                class="skill-buttons"
+                @click="activate"
+                @mouseenter="getTooltip"
+                :data-tooltip="tooltip"
+              >
+                <img
+                  :src="ctrlImages.heavyAttack[player]"
+                  alt="HEAVY"
+                  :class="{switchSkill: attachSwitchSkill}"
+                />
+              </button>
+
+              <!--------------------------Healing Ability ------------------------------------>
+              <button
+                id="3"
+                class="skill-buttons"
+                @click="activate"
+                @mouseenter="getTooltip"
+                :data-tooltip="tooltip"
+              >
+                <img
+                  :src="ctrlImages.specialSkill[player]"
+                  alt="HEALING"
+                  :class="{switchSkill: attachSwitchSkill}"
+                />
+              </button>
+
+              <!------------------------Defense Skill---------------------------------------- -->
+              <button
+                id="4"
+                class="skill-buttons"
+                @click="activate"
+                @mouseenter="getTooltip"
+                :data-tooltip="tooltip"
+              >
+                <img
+                  :src="ctrlImages.defenseSkill[player]"
+                  alt="DEFENSE"
+                  :class="{switchSkill: attachSwitchSkill}"
+                />
+              </button>
+
+              <!---------------------------Buff Skill ------------------------------------------>
+              <button
+                id="5"
+                class="skill-buttons"
+                @click="activate"
+                @mouseenter="getTooltip"
+                :data-tooltip="tooltip"
+              >
+                <img
+                  :src="ctrlImages.buffSkill[player]"
+                  alt="BUFF"
+                  :class="{switchSkill: attachSwitchSkill}"
+                />
+              </button>
+
+              <!---------------------------Ranged Attack ----------------------------------------->
+              <button
+                id="6"
+                class="skill-buttons"
+                @click="activate"
+                @mouseenter="getTooltip"
+                :data-tooltip="tooltip"
+              >
+                <img
+                  :src="ctrlImages.rangedAttack[player]"
+                  alt="DEFENSE"
+                  :class="{switchSkill: attachSwitchSkill}"
+                />
+              </button>
+
+              <!------------------------Forfeit Button ----------------------------------------->
+              <button id="0" @click="resetGame" data-tooltip="Forfeit Game">
+                <img :src="ctrlImages.forfeitBattle[player]" alt="FORFEIT" />
+              </button>
+            </div>
+          </template>
+        </div>
+        <!-------------------------end of game controls segment-------------------------------->
+      </div>
+    </div>
+  </body>
+</html>

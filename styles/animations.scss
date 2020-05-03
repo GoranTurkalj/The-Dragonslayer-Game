@@ -1,0 +1,205 @@
+// Animation for the start button
+
+@keyframes animateStartBtn {
+  0% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+// Animation for the img of the start button when the button is created (on loading and on resetting game)
+
+@keyframes animateStartLogo {
+  0% {
+    transform: rotateZ(0deg) scale(0);
+  }
+
+  100% {
+    transform: rotateZ(-180deg) scale(1);
+  }
+}
+
+// Animation for the active player img
+
+@keyframes animateActive {
+  0% {
+  }
+
+  50% {
+    box-shadow: 0px 0px 10px 5px rgb(24, 141, 33);
+  }
+
+  100% {
+  }
+}
+
+// Animation for the dice throw ************************************
+@keyframes animateDice {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+    opacity: 0%;
+  }
+
+  25% {
+    transform: rotate3d(1, 1, 1, 90deg);
+    opacity: 0%;
+  }
+
+  50% {
+    transform: rotate3d(1, 1, 1, 180deg);
+    opacity: 0%;
+  }
+
+  75% {
+    transform: rotate3d(1, 1, 1, 270deg);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+    opacity: 100%;
+  }
+}
+
+// Animation for the list items - entry in the battleLog
+
+@keyframes animateEntry {
+  0% {
+    max-height: 0px;
+
+    transform: scale(0) rotateX(-90deg);
+
+    opacity: 0%;
+  }
+
+  100% {
+    max-height: 42px;
+
+    transform: scale(1) rotateX(0deg);
+
+    opacity: 100%;
+  }
+}
+
+// Animation for the buff status
+
+@keyframes animateBuff {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+// Animation for the defense status
+@keyframes animateShield {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+// Animation for the luck status
+
+@keyframes animateLuck {
+  0% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+//Animation for the dice container
+
+@keyframes animateDiceContainer {
+  0% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+// Animationn for the impact when damage happens!
+@keyframes animateImpact {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  10% {
+    transform: translate(3px, 3px);
+  }
+
+  20% {
+    transform: translate(-3px, -3px);
+  }
+
+  30% {
+    transform: translate(3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  50% {
+    transform: translate(3px, 3px);
+  }
+
+  60% {
+    transform: translate(-3px, -3px);
+  }
+
+  70% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(-3px, -3px);
+  }
+
+  90% {
+    transform: translate(3px, 3px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+// Animation za skill buttons
+
+@keyframes animateSkillBtn {
+  0% {
+  }
+
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+// Animation for the Game Title and for the Tooltips on pseudo elements!
+
+@keyframes animateText {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
