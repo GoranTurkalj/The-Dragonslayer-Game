@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="icon" href="data:," />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
     <script src="app.js" defer></script>
@@ -78,7 +78,7 @@
               data-tooltip="Throw Dice"
               :class="{disabled: diceThrown}"
             >
-              <img src="/images/roll gauntlet 2.png" alt="roll" />
+              <img src="./images/roll gauntlet 2.png" alt="roll" />
             </button>
             <div id="dice-container">
               <img :src="diceImage" :class="{roll:attachRoll}" alt="" />
@@ -86,7 +86,7 @@
             <button id="end-turn-btn" @click="endTurn" data-tooltip="End Turn">
               <img
                 id="end-turn-logo"
-                src="/images/turn icon 4.png"
+                src="./images/turn icon 4.png"
                 :style="rotateHourglass"
                 alt="turn"
               />
@@ -134,7 +134,7 @@
           >
             <img
               id="start-game-logo"
-              src="/images/start 11.png"
+              src="./images/start 11.png"
               :class="{rotation: attachRotation}"
               alt="START"
             />

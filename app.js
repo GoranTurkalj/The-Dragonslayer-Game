@@ -10,7 +10,7 @@ const bunny = new Vue({
     defender: "",
     rolledDice: 0,
     diceThrown: false, // moze li se ovo i rolledDice iskombinirati da roll dice button ne treba ovaj property nego da koristi rolledDice
-    diceImage: "/images/dice.png",
+    diceImage: "./images/dice.png",
     attachRoll: false,
     attachEndTurn: false,
     rotateEndTurn: 0,
@@ -23,25 +23,25 @@ const bunny = new Vue({
 
     // General Game Sounds*****************************************************************************
 
-    startBattleSound: new Audio("/sounds/start fire.mp3"),
-    throwDiceSound: new Audio("/sounds/roll dice plastic 1.mp3"),
-    endTurnSound1: new Audio("/sounds/hourglass 1.mp3"),
-    endTurnSound2: new Audio("/sounds/hourglass 2.mp3"),
+    startBattleSound: new Audio("./sounds/start fire.mp3"),
+    throwDiceSound: new Audio("./sounds/roll dice plastic 1.mp3"),
+    endTurnSound1: new Audio("./sounds/hourglass 1.mp3"),
+    endTurnSound2: new Audio("./sounds/hourglass 2.mp3"),
     battleRecords: [],
     ctrlImages: {
-      lightAttack: ["/images/strike 1.png", "/images/dragon claw 4.png"],
-      heavyAttack: ["/images/heavy 1.png", "/images/dragon tail 2.png"],
+      lightAttack: ["./images/strike 1.png", "./images/dragon claw 4.png"],
+      heavyAttack: ["./images/heavy 1.png", "./images/dragon tail 2.png"],
       rangedAttack: [
-        "/images/player ranged 16.png",
-        "/images/dragon fire 2.png",
+        "./images/player ranged 16.png",
+        "./images/dragon fire 2.png",
       ],
       defenseSkill: [
-        "/images/defend icon 1.png",
-        "/images/dragon defend 1.png",
+        "./images/defend icon 1.png",
+        "./images/dragon defend 1.png",
       ],
-      specialSkill: ["/images/heal 6.png", "/images/heal spell 3.png"],
-      buffSkill: ["/images/player buff 2.png", "/images/dragon buff 1.png"],
-      forfeitBattle: ["/images/start 11.png", "/images/start 11.png"],
+      specialSkill: ["./images/heal 6.png", "./images/heal spell 3.png"],
+      buffSkill: ["./images/player buff 2.png", "./images/dragon buff 1.png"],
+      forfeitBattle: ["./images/start 11.png", "./images/start 11.png"],
     },
 
     // Player Data***********************************************************************************
@@ -57,7 +57,7 @@ const bunny = new Vue({
       lucky: false,
       wasAttacked: false,
       dead: false,
-      image: "/images/hero.jpg",
+      image: "./images/hero.jpg",
       victoryQuote: "THE GREAT WORM IS DEAD AT LAST!!!",
       tooltips: [
         { id: 1, text: "Sword Strike" },
@@ -75,7 +75,7 @@ const bunny = new Vue({
           doesDMG: true,
           raiseDEF: false,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/light 0.mp3"),
+          skillSounds: new Audio("./sounds/light 0.mp3"),
         },
         {
           id: 2,
@@ -84,7 +84,7 @@ const bunny = new Vue({
           doesDMG: true,
           raiseDEF: false,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/heavy 0.mp3"),
+          skillSounds: new Audio("./sounds/heavy 0.mp3"),
         },
         {
           id: 6,
@@ -93,7 +93,7 @@ const bunny = new Vue({
           doesDMG: true,
           raiseDEF: false,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/ranged 0.mp3"),
+          skillSounds: new Audio("./sounds/ranged 0.mp3"),
         },
         {
           id: 4,
@@ -102,7 +102,7 @@ const bunny = new Vue({
           doesDMG: false,
           raiseDEF: true,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/defense 0.mp3"),
+          skillSounds: new Audio("./sounds/defense 0.mp3"),
         },
         {
           id: 3,
@@ -111,7 +111,7 @@ const bunny = new Vue({
           doesDMG: false,
           raiseDEF: false,
           raiseHP: true,
-          skillSounds: new Audio("/sounds/heal 0.mp3"),
+          skillSounds: new Audio("./sounds/heal 0.mp3"),
         },
         {
           id: 5,
@@ -121,17 +121,17 @@ const bunny = new Vue({
           raiseDEF: false,
           raiseHP: false,
           doesBuff: true,
-          skillSounds: new Audio("/sounds/buff 0.mp3"),
+          skillSounds: new Audio("./sounds/buff 0.mp3"),
         },
       ],
       generalSounds: {
         injurySounds: [
-          "/sounds/heroinjury 0.mp3",
-          "/sounds/heroinjury 1.mp3",
-          "/sounds/heroinjury 2.mp3",
+          "./sounds/heroinjury 0.mp3",
+          "./sounds/heroinjury 1.mp3",
+          "./sounds/heroinjury 2.mp3",
         ],
-        defeatSounds: new Audio("/sounds/defeat 0.mp3"),
-        victorySounds: new Audio("/sounds/victory 0.mp3"),
+        defeatSounds: new Audio("./sounds/defeat 0.mp3"),
+        victorySounds: new Audio("./sounds/victory 0.mp3"),
       },
     },
 
@@ -149,7 +149,7 @@ const bunny = new Vue({
       lucky: false,
       wasAttacked: false,
       dead: false,
-      image: "/images/dragon.jpg",
+      image: "./images/dragon.jpg",
       victoryQuote: "I WILL ADD YOUR SCORCHED SKULL TO THE PILE!!!",
       tooltips: [
         { id: 1, text: "Claw Slash" },
@@ -167,7 +167,7 @@ const bunny = new Vue({
           doesDMG: true,
           raiseDEF: false,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/light 1.mp3"),
+          skillSounds: new Audio("./sounds/light 1.mp3"),
         },
         {
           id: 2,
@@ -176,7 +176,7 @@ const bunny = new Vue({
           doesDMG: true,
           raiseDEF: false,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/heavy 1.mp3"),
+          skillSounds: new Audio("./sounds/heavy 1.mp3"),
         },
         {
           id: 6,
@@ -185,7 +185,7 @@ const bunny = new Vue({
           doesDMG: true,
           raiseDEF: false,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/ranged 1.mp3"),
+          skillSounds: new Audio("./sounds/ranged 1.mp3"),
         },
         {
           id: 4,
@@ -194,7 +194,7 @@ const bunny = new Vue({
           doesDMG: false,
           raiseDEF: true,
           raiseHP: false,
-          skillSounds: new Audio("/sounds/defense 1.mp3"),
+          skillSounds: new Audio("./sounds/defense 1.mp3"),
         },
         {
           id: 3,
@@ -203,7 +203,7 @@ const bunny = new Vue({
           doesDMG: false,
           raiseDEF: false,
           raiseHP: true,
-          skillSounds: new Audio("/sounds/heal 1.mp3"),
+          skillSounds: new Audio("./sounds/heal 1.mp3"),
         },
         {
           id: 5,
@@ -213,18 +213,18 @@ const bunny = new Vue({
           raiseDEF: false,
           raiseHP: false,
           doesBuff: true,
-          skillSounds: new Audio("/sounds/buff 1.mp3"),
+          skillSounds: new Audio("./sounds/buff 1.mp3"),
         },
       ],
 
       generalSounds: {
         injurySounds: [
-          "/sounds/dragoninjury 0.mp3",
-          "/sounds/dragoninjury 1.mp3",
-          "/sounds/dragoninjury 2.mp3",
+          "./sounds/dragoninjury 0.mp3",
+          "./sounds/dragoninjury 1.mp3",
+          "./sounds/dragoninjury 2.mp3",
         ],
-        defeatSounds: new Audio("/sounds/defeat 1.mp3"),
-        victorySounds: new Audio("/sounds/victory 1.mp3"),
+        defeatSounds: new Audio("./sounds/defeat 1.mp3"),
+        victorySounds: new Audio("./sounds/victory 1.mp3"),
       },
     },
   },
@@ -271,14 +271,14 @@ const bunny = new Vue({
 
     displayHeroLuck: function () {
       if (this.hero.lucky) {
-        new Audio("/sounds/luck.mp3").play();
+        new Audio("./sounds/luck.mp3").play();
         return { displayLuck: true };
       }
     },
 
     displayDragonLuck: function () {
       if (this.dragon.lucky) {
-        new Audio("/sounds/luck.mp3").play();
+        new Audio("./sounds/luck.mp3").play();
         return { displayLuck: true };
       }
     },
@@ -353,7 +353,7 @@ const bunny = new Vue({
       }
       // rolledDice je stavljen na 0 kad se promijeni turn - usput miče i status luck.
       this.rolledDice = 0;
-      this.diceImage = "/images/dice.png";
+      this.diceImage = "./images/dice.png";
       this.hero.lucky = false;
       this.dragon.lucky = false;
 
@@ -391,9 +391,9 @@ const bunny = new Vue({
       this.dragon.currentDEF = 0;
       this.hero.defenseBar = 0;
       this.dragon.defenseBar = 0;
-      this.hero.image = "/images/hero.jpg";
-      this.dragon.image = "/images/dragon.jpg";
-      this.diceImage = "/images/dice.png";
+      this.hero.image = "./images/hero.jpg";
+      this.dragon.image = "./images/dragon.jpg";
+      this.diceImage = "./images/dice.png";
       this.rolledDice = 0;
       this.diceThrown = false;
       this.hero.buffed = false;
@@ -471,11 +471,13 @@ const bunny = new Vue({
       // Play prepareSkillSound based on type of skills used.
       let prepareSkillSound = null;
       if (btnID <= 2) {
-        prepareSkillSound = new Audio(`/sounds/attack ${this.player}.mp3`);
+        prepareSkillSound = new Audio(`./sounds/attack ${this.player}.mp3`);
       } else if (btnID === 3) {
-        prepareSkillSound = new Audio(`/sounds/healing ${this.player}.mp3`);
+        prepareSkillSound = new Audio(`./sounds/healing ${this.player}.mp3`);
       } else if (btnID === 6) {
-        prepareSkillSound = new Audio(`/sounds/readyranged ${this.player}.mp3`);
+        prepareSkillSound = new Audio(
+          `./sounds/readyranged ${this.player}.mp3`
+        );
       }
 
       if (prepareSkillSound) {
@@ -620,7 +622,7 @@ const bunny = new Vue({
       this.throwDiceSound.play();
       //Alternate sounds of dice throwing
       this.throwDiceSound = new Audio(
-        `/sounds/roll dice plastic ${Math.floor(Math.random() * 3) + 1}.mp3`
+        `./sounds/roll dice plastic ${Math.floor(Math.random() * 3) + 1}.mp3`
       );
 
       // generate a random number between 1 and 6 and return the result of the dice throw
@@ -648,7 +650,7 @@ const bunny = new Vue({
       }, 1000);
 
       //change the dice image that gets displayed
-      this.diceImage = `/images/${diceResult}.jpg`;
+      this.diceImage = `./images/${diceResult}.jpg`;
 
       //Animate the dice throw
       this.attachRoll = !this.attachRoll;
@@ -759,8 +761,10 @@ const bunny = new Vue({
         skill.skillSounds.currentTime = 0;
       }, 3500);
 
-      let criticalMissSound = new Audio(`/sounds/crit miss ${this.player}.mp3`);
-      let criticalHitSound = new Audio(`/sounds/crit hit.mp3`);
+      let criticalMissSound = new Audio(
+        `./sounds/crit miss ${this.player}.mp3`
+      );
+      let criticalHitSound = new Audio(`./sounds/crit hit.mp3`);
 
       // Play sounds for critical miss or hit
       if (this.attackCritMiss) {
@@ -790,7 +794,7 @@ const bunny = new Vue({
 
             //This sound play when defender has defense up and attack happens (not a critical miss)
             let defenseSound = new Audio(
-              `/sounds/defense impact ${this.player}.mp3`
+              `./sounds/defense impact ${this.player}.mp3`
             );
             defenseSound.play();
             // now I need to make sure neither output nor defense went below 0!
@@ -846,7 +850,7 @@ const bunny = new Vue({
       if (defender.currentHP === 0) {
         entry = `${attacker.victoryQuote}`;
         defender.dead = true;
-        defender.image = `/images/dead ${this.player}.png`;
+        defender.image = `./images/dead ${this.player}.png`;
         defender.generalSounds.defeatSounds.play();
 
         // After 1 second delay, play victory sound of the attacker.
