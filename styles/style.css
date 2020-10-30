@@ -385,6 +385,8 @@ html {
 body {
   background-image: url("../images/background.jpg");
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -402,7 +404,10 @@ body {
 #main-container {
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.2)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  min-width: 80rem;
   width: 80%;
+  max-width: 110rem;
+  min-height: 48.625rem;
   height: 80%;
   border-radius: 1rem;
   -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);

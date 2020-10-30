@@ -20,6 +20,8 @@ html {
 body {
   background-image: url("../images/background.jpg");
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -36,7 +38,10 @@ body {
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0.2)
   );
+  min-width: 80rem;
   width: 80%;
+  max-width: 110rem;
+  min-height: 48.625rem;
   height: 80%;
 
   border-radius: 1rem;
