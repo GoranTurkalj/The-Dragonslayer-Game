@@ -28,6 +28,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 // Main container
@@ -43,7 +44,7 @@ body {
   max-width: 110rem;
   min-height: 45.625rem;
   height: 80%;
-
+  max-height: 64rem; 
   border-radius: 1rem;
   box-shadow: $boxShadow;
 }
